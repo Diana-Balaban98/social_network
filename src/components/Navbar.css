@@ -1,0 +1,13 @@
+
+nav {
+    margin-right: 15px;
+    grid-area: nav;
+    background-color: burlywood;
+}
+
+
+.item {
+    font-size: 60px;
+    color: olive;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
