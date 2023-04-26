@@ -1,24 +1,23 @@
 import React from "react";
-import "./Profile.css";
-
+import s from "./Profile.module.css";
+console.log(s)
 
 const Profile = () => {
     return (
-        <div className="content">
-            <div className="content-img">
+        <div className={s.content}>
+            <div className={s.contentImg}>
             </div>
-            <div className="wrapper-user">
-                <div className="user-img">
+            <div className={s.wrapperUser}>
+                <div className={s.userImg}>
                     <img src="https://www.shkolazhizni.ru/img/content/i233/233106_or.jpg" alt="cat"/>
                 </div>
                 <div className="user-info">
                     <h3 className="user-title">Diana B.</h3>
-
                     <div className="user-description">
-                      <a className="item"><p>Date of Birth: 24 february</p></a>
-                      <a className="item"><p>City: Minsk</p></a>
-                      <a className="item"><p>Education: VSU'19</p></a>
-                      <a className="item"> <p>Web Site: in process</p></a>
+                        <a className={s.item}><p>Date of Birth: 24 february</p></a>
+                        <a className={s.item}><p>City: Minsk</p></a>
+                        <a className={s.item}><p>Education: VSU'19</p></a>
+                        <a className={s.item}>< p> Web Site: in process</p></a>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
     background-color: cornflowerblue;
 }
 
-.content-img {
+.contentImg {
     margin-bottom: 15px;
     background-image: url("https://img.freepik.com/free-vector/leaves-background-with-metallic-foil_79603-956.jpg");
     max-width: 90%;
@@ -13,11 +13,11 @@
     background-size: cover;
 }
 
-.wrapper-user {
+.wrapperUser {
     display: flex;
 }
 
-.user-img img {
+.userImg img {
     height: 300px;
 }
 
