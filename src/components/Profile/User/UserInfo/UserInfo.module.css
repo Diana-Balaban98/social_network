@@ -1,0 +1,10 @@
+.userTitle {
+    margin: 15px 0;
+    font-size: 40px;
+}
+
+.item {
+    font-size: 40px;
+    color: red;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}

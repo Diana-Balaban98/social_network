@@ -2,9 +2,7 @@ import React from "react";
 import s from "./Navbar.module.css";
 // {`${s.item} ${s.active}`} синтаксис для задания более одного класса элементу
 
-
-
-const Navbar = () => {
+const NavMenu = () => {
     return (
         <nav className="nav">
             <div>
@@ -22,7 +20,13 @@ const Navbar = () => {
             <div>
                 <a className={s.item} href="#">Settings</a>
             </div>
-        </nav>
+        </nav>)
+}
+
+
+const Navbar = () => {
+    return (
+        <NavMenu/>
     )
 }
 
