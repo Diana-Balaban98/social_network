@@ -9,7 +9,7 @@ import UserInfo from "./User/UserInfo/UserInfo";
 
 const Profile = () => {
     return (
-        <div className={s.content}>
+        <div>
            <BackgroundProfile/>
             <div className={s.wrapperUser}>
               <UserImg/>
