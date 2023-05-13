@@ -3,10 +3,17 @@ nav {
     margin-right: 15px;
     grid-area: nav;
     background-color: burlywood;
+    padding: 50px;
 }
 
 
-.item {
+.item a {
+    color: white;
+    text-decoration: none;
     font-size: 60px;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.item a.activeLink {
+    color: gold;
 }
