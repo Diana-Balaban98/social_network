@@ -1,20 +1,12 @@
 import React from "react";
-import s from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
-import BackgroundProfile from "./BackgroundProfile/BackgroundProfile";
-import UserImg from "./User/UserImg/UserImg";
-import UserInfo from "./User/UserInfo/UserInfo";
-
+import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 
 
 const Profile = () => {
     return (
         <div>
-           <BackgroundProfile/>
-            <div className={s.wrapperUser}>
-              <UserImg/>
-               <UserInfo/>
-            </div>)
+           <ProfileInfo/>
             <MyPosts/>
         </div>
     )
