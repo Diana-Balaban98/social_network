@@ -7,6 +7,11 @@
     padding: 30px;
 }
 
+.dialogsItems a {
+    text-decoration: none;
+    color: bisque;
+}
+
 .dialogsItems .active {
     color: gold;
 }
@@ -15,7 +20,5 @@
     padding: 30px;
 }
 
-.message {
 
-}
 
