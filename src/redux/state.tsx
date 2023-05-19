@@ -13,7 +13,6 @@ export type MessagesType = {
     message: string
 }
 
-
 export type DialogsType = {
     id: string
     name: string
@@ -26,7 +25,7 @@ type StateType = {
 }
 
 // data
-const posts: PostsType[]  = [
+const posts: PostsType[] = [
     {id: v1(), message: "Hello, how are you?", likesCount: 5},
     {id: v1(), message: "I love world!", likesCount: 10},
     {id: v1(), message: "It's my first post!", likesCount: 3},
@@ -38,7 +37,7 @@ const messages: MessagesType[] = [
     {id: v1(), message: "Hi"},
     {id: v1(), message: "How is your it-kamasutra?"},
     {id: v1(), message: "Yo"},
-    {id: v1(), message: "Go to walk"},
+    {id: v1(), message: "Go!"},
     {id: v1(), message: "Mmmm, great!"},
     {id: v1(), message: "I'm Valera"},
 ]
