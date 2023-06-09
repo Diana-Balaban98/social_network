@@ -8,6 +8,9 @@ type MessageProps = {
 export const Message = ({ message }: MessageProps) => {
 
     return (
-        <div className={s.message}>{message}</div>
+        <div>
+            <div className={s.message}>{message}</div>
+        </div>
+
     )
 }

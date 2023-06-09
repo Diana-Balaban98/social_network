@@ -1,18 +1,18 @@
-import React, {useState} from "react";
+import React from "react";
 import s from "./Dialogs.module.css"
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
-import {DialogsType, MessagesType} from "../../redux/state";
+import {DialogsPageType} from "../../redux/state";
+import TextArea from "antd/es/input/TextArea";
 
 type DialogsPropsType = {
-    messages: MessagesType[]
-    dialogs: DialogsType[]
+    state: DialogsPageType
 }
 
-export const Dialogs = ({messages, dialogs}: DialogsPropsType) => {
+export const Dialogs = ({state: {dialogs, messages}}: DialogsPropsType) => {
 
     const dialogsData = dialogs.map((d, index) => {
-        return <DialogItem key={index} name={d.name} id={d.id}></DialogItem>
+        return <DialogItem key={index} name={d.name} id={d.id} avatar={d.avatar}></DialogItem>
     })
     const messagesData = messages.map((m, index) => {
         return <Message key={index} message={m.message}/>
@@ -27,6 +27,11 @@ export const Dialogs = ({messages, dialogs}: DialogsPropsType) => {
             <div className={s.messages}>
                 {messagesData}
             </div>
+            <div>
+                <textarea>Add</textarea>
+                <button>Add</button>
+            </div>
         </div>
+
     )
 }
