@@ -10,7 +10,7 @@ type PostPropsType = {
 const Post = (props: PostPropsType) => {
     return (
         <div className={s.wrapperPost}>
-            <img src="https://avatanplus.com/files/resources/original/5cf96bb565c1116b2e4cbca9.png"
+            <img src="https://pictures.pibig.info/uploads/posts/2023-03/1680288390_pictures-pibig-info-p-litso-krugloe-risunok-vkontakte-13.png"
                  alt="img"/>
             <a>{props.message}</a>
             <div>

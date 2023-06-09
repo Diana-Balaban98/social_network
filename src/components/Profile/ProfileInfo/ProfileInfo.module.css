@@ -11,13 +11,15 @@
 }
 
 .userTitle {
-    margin: 15px 0;
+    margin: 15px 0px;
     font-size: 40px;
+    color: royalblue;
 }
 
 .item {
+    display: block;
+    margin-bottom: 10px;
     font-size: 40px;
-    color: red;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 

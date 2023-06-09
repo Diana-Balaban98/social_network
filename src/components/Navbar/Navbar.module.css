@@ -1,6 +1,5 @@
 
 nav {
-    margin-right: 15px;
     grid-area: nav;
     background-color: burlywood;
     padding: 50px;
