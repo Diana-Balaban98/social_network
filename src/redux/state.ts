@@ -2,43 +2,42 @@ import {v1} from "uuid";
 import {rerenderEntireTree} from "../render";
 
 
-
 // types
-export type PostType = {
+export type PostsType = {
     id: string
     message: string
     likesCount: number
 }
 
-export type MessageType = {
+export type MessagesType = {
     id: string
     message: string
 }
 
-export type DialogType = {
+export type DialogsType = {
     id: string
     name: string
     avatar: string
 }
 
 export type ProfilePageType = {
-    posts: PostType[]
+    posts: PostsType[]
     newPostText: string
 }
 
-export type DialogPageType = {
-    messages: MessageType[]
-    dialogs: DialogType[]
+export type DialogsPageType = {
+    messages: MessagesType[]
+    dialogs: DialogsType[]
     newMessageText: string
 }
 
 export type SidebarType = {
-    friends: DialogType[]
+    friends: DialogsType[]
 }
 
 export type StateType = {
     profilePage: ProfilePageType
-    dialogsPage: DialogPageType
+    dialogsPage: DialogsPageType
     sidebar: SidebarType
 }
 
@@ -82,7 +81,7 @@ export const state: StateType = {
             },
             {
                 id: v1(),
-                name: "Jon",
+                name: "Jhon",
                 avatar: "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-1-avatar-2754574_120513.png"
             },
             {
@@ -116,7 +115,7 @@ export const state: StateType = {
 window.state = state
 
 export const addPost = () => {
-    const newPost: PostType = {id: v1(), message: state.profilePage.newPostText, likesCount: 0};
+    const newPost: PostsType = {id: v1(), message: state.profilePage.newPostText, likesCount: 0};
     state.profilePage.posts.unshift(newPost);
     state.profilePage.newPostText = ""
     rerenderEntireTree(state)
@@ -133,8 +132,9 @@ export const updateNewMessageText = (newMessage: string) => {
 }
 
 export const addMessage = () => {
-    const newMessage =  {id: v1(), message: state.dialogsPage.newMessageText}
-    state.dialogsPage.messages.unshift(newMessage)
+    const newMessage = {id: v1(), message: state.dialogsPage.newMessageText};
+    state.dialogsPage.messages.unshift(newMessage);
     state.dialogsPage.newMessageText = ""
     rerenderEntireTree(state)
 }
+

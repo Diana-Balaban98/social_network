@@ -8,7 +8,7 @@ import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Profile} from "./components/Profile/Profile";
 import {Music} from "./components/Music/Music";
-import {addMessage, StateType} from "./redux/state";
+import {StateType} from "./redux/state";
 
 
 type AppPropsType = {
@@ -19,8 +19,9 @@ type AppPropsType = {
     addMessage: () => void
 }
 
-const App: React.FC<AppPropsType> = ({state, addPost, updateNewPostText, updateNewMessageText, addMessage}) => {
-    const {profilePage, dialogsPage, sidebar} = state
+function App({state, addPost, updateNewPostText, updateNewMessageText, addMessage}: AppPropsType) {
+    const {profilePage, dialogsPage} = state
+
     const dialogsComponent = () => <Dialogs dialogsPage={dialogsPage} updateNewMessageText={updateNewMessageText} addMessage={addMessage}/>
     const profileComponent = () => <Profile profilePage={profilePage} addPost={addPost} updateNewPostText={updateNewPostText}/>
     const newsComponent = () => <News/>
@@ -31,7 +32,7 @@ const App: React.FC<AppPropsType> = ({state, addPost, updateNewPostText, updateN
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <Navbar state={sidebar}/>
+                <Navbar state={state.sidebar}/>
                 <div className="app-wrapper-content">
                     <Route exact path='/dialogs' render={dialogsComponent}/>
                     <Route exact path='/profile' render={profileComponent}/>

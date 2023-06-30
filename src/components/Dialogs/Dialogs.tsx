@@ -2,15 +2,15 @@ import React, {useRef} from "react";
 import s from "./Dialogs.module.css"
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
-import {addMessage, DialogPageType} from "../../redux/state";
+import {addMessage, DialogsPageType, updateNewMessageText} from "../../redux/state";
 
 type DialogsPropsType = {
-    dialogsPage: DialogPageType
+    dialogsPage: DialogsPageType
     updateNewMessageText: (newMessage: string) => void
     addMessage: () => void
 }
 
-export const Dialogs = ({dialogsPage, updateNewMessageText, addMessage}: DialogsPropsType) => {
+export const Dialogs = ({dialogsPage}: DialogsPropsType) => {
     const {dialogs, messages} = dialogsPage
 
     const dialogsData = dialogs.map((d, index) => {
@@ -22,12 +22,14 @@ export const Dialogs = ({dialogsPage, updateNewMessageText, addMessage}: Dialogs
 
     const newMessageElement = useRef<HTMLTextAreaElement>(null)
 
-    const onChangeHandler = () => {
-        updateNewMessageText(newMessageElement.current!.value)
+    const onChangeAddMessage = () => {
+        let text = newMessageElement.current!.value
+        updateNewMessageText(text)
     }
 
-    const onClickAddMessage = () => {
+    const onClickHandler = () => {
         addMessage()
+        newMessageElement.current!.value = ""
     }
 
     return (
@@ -39,11 +41,10 @@ export const Dialogs = ({dialogsPage, updateNewMessageText, addMessage}: Dialogs
             <div className={s.messages}>
                 {messagesData}
             </div>
-            <div className={s.sendMessage}>
-                <textarea onChange={onChangeHandler} ref={newMessageElement}/>
-                <button onClick={onClickAddMessage}>Add</button>
+            <div>
+                <textarea ref={newMessageElement} onChange={onChangeAddMessage}/>
+                <button onClick={onClickHandler}>Add</button>
             </div>
         </div>
-
-    )
+)
 }
