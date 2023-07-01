@@ -1,6 +1,9 @@
 import {v1} from "uuid";
-import {rerenderEntireTree} from "../render";
 
+// @ts-ignore
+let rerenderEntireTree = (state: StateType) => {
+    console.log("State was changed")
+}
 
 // types
 export type PostsType = {
@@ -138,3 +141,6 @@ export const addMessage = () => {
     rerenderEntireTree(state)
 }
 
+export const subscribe = (observer: (state: StateType) => void) => {
+    rerenderEntireTree = observer
+}
