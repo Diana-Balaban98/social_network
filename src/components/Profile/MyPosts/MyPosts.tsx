@@ -20,10 +20,12 @@ const MyPosts = ({profilePage, addPost, updateNewPostText}: MyPostsPropsType) =>
     const newPostElement = useRef<HTMLTextAreaElement>(null)
 
     const onClickAddPost = () => {
+        debugger
         addPost()
     }
 
     const onChangeHandler = () => {
+        debugger
         const text = newPostElement.current!.value
         updateNewPostText(text)
     }
