@@ -1,16 +1,18 @@
 import React, {useRef} from "react";
 import Post from "./Post/Post";
 import s from "./MyPosts.module.css"
-import {ProfilePageType} from "../../../redux/state";
+import {addPostAC, updateNewPostTextAC} from "../../../redux/profile-reducer";
+import {ProfileActionsType} from "../../../redux/profile-reducer";
+import {DialogsActionsType} from "../../../redux/dialogs-reducer";
+import {ProfilePageType} from "../../../redux/store";
 
 
 type MyPostsPropsType = {
     profilePage: ProfilePageType
-    addPost: () => void
-    updateNewPostText: (newText: string) => void
+    dispatch(action: ProfileActionsType | DialogsActionsType): void
 }
 
-const MyPosts = ({profilePage, addPost, updateNewPostText}: MyPostsPropsType) => {
+const MyPosts = ({profilePage, dispatch}: MyPostsPropsType) => {
     let {posts, newPostText} = profilePage
 
     const postsData = posts.map((p, index) => {
@@ -20,21 +22,23 @@ const MyPosts = ({profilePage, addPost, updateNewPostText}: MyPostsPropsType) =>
     const newPostElement = useRef<HTMLTextAreaElement>(null)
 
     const onClickAddPost = () => {
-        debugger
-        addPost()
+        dispatch(addPostAC())
     }
 
     const onChangeHandler = () => {
-        debugger
         const text = newPostElement.current!.value
-        updateNewPostText(text)
+        dispatch(updateNewPostTextAC(text))
     }
 
     return (
         <div className={s.posts}>
             <h3>My posts</h3>
-            <textarea  onChange={onChangeHandler} value={newPostText} ref={newPostElement}/>
-            <button onClick={onClickAddPost} className={s.button}>Send</button>
+            <textarea
+                       onChange={onChangeHandler}
+                       value={newPostText}
+                       ref={newPostElement}
+            />
+            <button onClick={onClickAddPost} className={s.button}>Add</button>
             <div className={s.messages}>
                 {postsData}
             </div>

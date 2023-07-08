@@ -8,22 +8,28 @@ import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Profile} from "./components/Profile/Profile";
 import {Music} from "./components/Music/Music";
-import {StateType} from "./redux/state";
+import {StateType} from "./redux/store";
+import {ProfileActionsType} from "./redux/profile-reducer";
+import {DialogsActionsType} from "./redux/dialogs-reducer";
 
 
 type AppPropsType = {
     state: StateType
-    addPost: () => void
-    updateNewPostText: (newText: string) => void
-    updateNewMessageText: (newMessage: string) => void
-    addMessage: () => void
+    dispatch(action: ProfileActionsType | DialogsActionsType): void
 }
 
-function App({state, addPost, updateNewPostText, updateNewMessageText, addMessage}: AppPropsType) {
+const App = ({state, dispatch}: AppPropsType) => {
     const {profilePage, dialogsPage} = state
 
-    const dialogsComponent = () => <Dialogs dialogsPage={dialogsPage} updateNewMessageText={updateNewMessageText} addMessage={addMessage}/>
-    const profileComponent = () => <Profile profilePage={profilePage} addPost={addPost} updateNewPostText={updateNewPostText}/>
+    const dialogsComponent = () => <Dialogs
+        dialogsPage={dialogsPage}
+        dispatch={dispatch}
+    />
+
+    const profileComponent = () => <Profile
+        profilePage={profilePage}
+        dispatch={dispatch}/>
+
     const newsComponent = () => <News/>
     const musicComponent = () => <Music/>
     const settingsComponent = () => <Settings/>
