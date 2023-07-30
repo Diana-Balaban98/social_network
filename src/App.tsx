@@ -8,7 +8,11 @@ import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Profile} from "./components/Profile/Profile";
 import {Music} from "./components/Music/Music";
+<<<<<<< HEAD
 import {StateType} from "./redux/store";
+=======
+import {StateType} from "./redux/state";
+>>>>>>> 3ca9c25ed428e665db47fc0d4c226c97175a77c8
 import {ProfileActionsType} from "./redux/profile-reducer";
 import {DialogsActionsType} from "./redux/dialogs-reducer";
 

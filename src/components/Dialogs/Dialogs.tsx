@@ -4,7 +4,11 @@ import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
 import {DialogsActionsType, sendMessageAC, updateNewMessageTextAC} from "../../redux/dialogs-reducer";
 import {ProfileActionsType} from "../../redux/profile-reducer";
+<<<<<<< HEAD
 import {DialogsPageType} from "../../redux/store";
+=======
+import {DialogsPageType} from "../../redux/state";
+>>>>>>> 3ca9c25ed428e665db47fc0d4c226c97175a77c8
 
 type DialogsPropsType = {
     dialogsPage: DialogsPageType

@@ -1,4 +1,5 @@
 import {v1} from "uuid";
+<<<<<<< HEAD
 import {PostsType, ProfilePageType, store} from "./store";
 import {DialogsActionsType} from "./dialogs-reducer";
 
@@ -19,12 +20,27 @@ export const profileReducer = (state = initState, action: ProfileActionsType | D
             const newPost: PostsType = {id: v1(), message: store._state.profilePage.newPostText, likesCount: 0};
             state.posts.unshift(newPost);
             state.newPostText = ""
+=======
+import {PostsType, ProfilePageType, store} from "./state";
+import {DialogsActionsType} from "./dialogs-reducer";
+
+export const profileReducer = (state: ProfilePageType, action: ProfileActionsType | DialogsActionsType) => {
+    switch (action.type) {
+        case 'ADD-POST':
+           const newPost: PostsType = {id: v1(), message: store._state.profilePage.newPostText, likesCount: 0};
+           state.posts.unshift(newPost);
+           state.newPostText = ""
+>>>>>>> 3ca9c25ed428e665db47fc0d4c226c97175a77c8
             return state
         case 'UPDATE-NEW-POST-TEXT':
             state.newPostText = action.newText
             return state
+<<<<<<< HEAD
         default:
             return state
+=======
+        default: return state
+>>>>>>> 3ca9c25ed428e665db47fc0d4c226c97175a77c8
     }
 }
 
