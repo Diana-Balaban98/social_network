@@ -11,4 +11,4 @@ const rootReducers = combineReducers({
 
 export const store = createStore(rootReducers);
 
-export type AppRootStateType = ReturnType<typeof rootReducers>''
+export type AppRootStateType = ReturnType<typeof rootReducers>
