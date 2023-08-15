@@ -1,10 +1,6 @@
 import {v1} from "uuid";
 import {ProfileActionsType, profileReducer} from "./profile-reducer";
 import {DialogsActionsType, dialogsReducer} from "./dialogs-reducer";
-<<<<<<< HEAD:src/redux/store.ts
-=======
-
->>>>>>> 3ca9c25ed428e665db47fc0d4c226c97175a77c8:src/redux/state.ts
 
 // types
 export type PostsType = {
@@ -53,12 +49,6 @@ export type StoreType = {
     dispatch(action: ProfileActionsType | DialogsActionsType): void
 }
 
-
-<<<<<<< HEAD:src/redux/store.ts
-// store
-=======
-// data
->>>>>>> 3ca9c25ed428e665db47fc0d4c226c97175a77c8:src/redux/state.ts
 export let store: StoreType = {
     _state: {
         profilePage: {

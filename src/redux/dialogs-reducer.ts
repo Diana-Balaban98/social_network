@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 import {DialogsPageType, MessagesType} from "./store";
 import {v1} from "uuid";
 import {ProfileActionsType} from "./profile-reducer";
+
 
 
 const initialState: DialogsPageType = {
@@ -48,14 +48,17 @@ const initialState: DialogsPageType = {
     newMessageText: ""
 }
 
-export const dialogsReducer = (state = initialState, action: DialogsActionsType | ProfileActionsType) => {
-=======
-import {DialogsPageType, MessagesType} from "./state";
-import {v1} from "uuid";
-import {ProfileActionsType} from "./profile-reducer";
+export type DialogsActionsType = ReturnType<typeof updateNewMessageTextAC> | ReturnType<typeof sendMessageAC>
+
+export const updateNewMessageTextAC = (newMessage: string) => ({
+    type: 'UPDATE-NEW-MESSAGE-TEXT' as const,
+    newMessage
+})
+
+export const sendMessageAC = () => ({type: 'SEND-MESSAGE' as const})
+
 
 export const dialogsReducer = (state: DialogsPageType, action: DialogsActionsType | ProfileActionsType) => {
->>>>>>> 3ca9c25ed428e665db47fc0d4c226c97175a77c8
     switch (action.type) {
         case 'SEND-MESSAGE':
             const newMessage: MessagesType = {id: v1(), message: state.newMessageText};
@@ -65,22 +68,10 @@ export const dialogsReducer = (state: DialogsPageType, action: DialogsActionsTyp
         case 'UPDATE-NEW-MESSAGE-TEXT':
             state.newMessageText = action.newMessage
             return state
-<<<<<<< HEAD
         default:
             return state
-=======
-        default: return state
->>>>>>> 3ca9c25ed428e665db47fc0d4c226c97175a77c8
     }
 }
 
-export type DialogsActionsType = ReturnType<typeof updateNewMessageTextAC> | ReturnType<typeof sendMessageAC>
-
-export const updateNewMessageTextAC = (newMessage: string) => ({
-    type: 'UPDATE-NEW-MESSAGE-TEXT' as const,
-    newMessage
-})
-
-export const sendMessageAC = () => ({type: 'SEND-MESSAGE' as const})
 
 
